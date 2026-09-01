@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHOOP Work Samples — Creators & Ambassadors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1B2B;
+    --panel: #16273B;
+    --panel-2: #1C3049;
+    --border: #253c56;
+    --text: #ECEEF1;
+    --text-dim: #93A2B4;
+    --gold: #C9A227;
+    --gold-dim: #8C7420;
+    --teal: #4FD1A5;
+    --red: #C1554A;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0 0 16px;
+  }
+  h1.display {
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 56ch;
+    margin: 0 0 40px;
+  }
+  .stroke-line {
+    width: 100%;
+    height: 48px;
+    display: block;
+  }
+
+  section.project {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section.project:last-of-type { border-bottom: none; }
+  .project-label {
+    font-size: 14px;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  h2.display {
+    font-size: 30px;
+    margin: 0 0 16px;
+  }
+  .project-desc {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 60ch;
+    margin: 0 0 32px;
+  }
+
+  .status-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .status-card p { margin: 0; color: var(--text-dim); font-size: 15px; }
+  .pill {
+    display: inline-block;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(201, 162, 39, 0.12);
+    color: var(--gold);
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    white-space: nowrap;
+  }
+
+  .creator-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 28px 26px;
+    margin-bottom: 20px;
+  }
+  .creator-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .creator-name {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .tier {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid;
+  }
+  .tier-signed { color: var(--teal); border-color: rgba(79, 209, 165, 0.4); background: rgba(79, 209, 165, 0.08); }
+  .tier-great { color: var(--teal); border-color: rgba(79, 209, 165, 0.4); background: rgba(79, 209, 165, 0.08); }
+  .tier-okay { color: var(--gold); border-color: rgba(201, 162, 39, 0.4); background: rgba(201, 162, 39, 0.08); }
+  .tier-pass { color: var(--red); border-color: rgba(193, 85, 74, 0.4); background: rgba(193, 85, 74, 0.08); }
+
+  .creator-meta {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0 0 16px;
+  }
+  .creator-card p.body-text {
+    font-size: 15px;
+    color: #C9D1DB;
+    margin: 0 0 12px;
+  }
+  .creator-card p.body-text:last-child { margin-bottom: 0; }
+  .creator-card strong { color: var(--text); font-weight: 600; }
+  .verdict-line {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .verdict-line .label { color: var(--text-dim); }
+
+  table.summary {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  table.summary th, table.summary td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  table.summary th {
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  footer {
+    padding: 48px 0 80px;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 64px 0 48px; }
+    h1.display { font-size: 32px; }
+    section.project { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Work samples — WHOOP Creators &amp; Ambassadors</p>
+    <h1 class="display">Trained on the erg. Built on the data.</h1>
+    <p class="hero-sub">Two small, finished projects built around a real training arc — rowing and erg work — showing how I'd think about both the data side and the creator side of this role.</p>
+    <svg class="stroke-line" viewBox="0 0 720 48" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="0,24 60,24 90,8 120,40 150,24 210,24 240,10 270,38 300,24 360,24 390,8 420,40 450,24 510,24 540,10 570,38 600,24 660,24 690,16 720,24"
+        fill="none" stroke="#C9A227" stroke-width="1.5" stroke-opacity="0.6" />
+    </svg>
+  </header>
+
+  <section class="project" id="project-1">
+    <p class="project-label">Project 1</p>
+    <h2 class="display">Recovery &amp; erg load, from my own WHOOP data</h2>
+    <p class="project-desc">A focused analysis of my WHOOP export — finding one real behavioral insight in how erg training load interacts with recovery, rather than recreating existing WHOOP metrics.</p>
+    <div class="status-card">
+      <p>In progress — waiting on the personal data export before building this from real data rather than an assumed schema.</p>
+      <span class="pill">Coming soon</span>
+    </div>
+  </section>
+
+  <section class="project" id="project-2">
+    <p class="project-label">Project 2</p>
+    <h2 class="display">Creator fit report</h2>
+    <p class="project-desc">Five creators evaluated across the full partnership spectrum — from a proven, signed ambassador to a clear mission mismatch — against WHOOP's own content pillars: authenticity, data-backed storytelling, and athlete-journey framing.</p>
+
+    <div class="creator-card">
+      <div class="creator-head">
+        <h3 class="creator-name">Ian Fonz (@fonzian)</h3>
+        <span class="tier tier-signed">Signed &amp; working</span>
+      </div>
+      <p class="creator-meta">~588K Instagram · confirmed WHOOP ambassador · Austin, TX</p>
+      <p class="body-text">Veteran, founder of the Raw Dawg Run Club, Gymshark athlete. Runs an active WHOOP referral program. His content is a textbook execution of the brand's core move: cold-open on a jarring metric — <em>"my recovery was 1%"</em> — then unpack the training story behind it.</p>
+      <p class="body-text">He doesn't perform enthusiasm for the product; the numbers are the content, and the story that follows is always about training decisions, not brand messaging.</p>
+      <div class="verdict-line"><span class="label">Verdict —</span> keep and expand. A benchmark partnership WHOOP should point to when briefing new ambassadors on tone.</div>
+    </div>
+
+    <div class="creator-card">
+      <div class="creator-head">
+        <h3 class="creator-name">Emilio Fernandez (@emiliooofernandez)</h3>
+        <span class="tier tier-great">Great fit</span>
+      </div>
+      <p class="creator-meta">~5,000 followers · endurance / triathlon creator</p>
+      <p class="body-text">Content centers on endurance training balanced against mental health and knowing when too much is too much — high energy, personable, built on genuine discipline paired with explicit recovery-awareness rather than a pure grind persona.</p>
+      <p class="body-text"><strong>Mission alignment</strong> is close to a paraphrase of WHOOP's own value proposition — strain versus recovery, listening to your body. <strong>Cost and reach</strong> make this a low-risk signing with real upside, and the <strong>relatability</strong> of balancing endurance sport with a personal life is a more accessible entry point than elite-athlete content.</p>
+      <div class="verdict-line"><span class="label">Verdict —</span> sign. Small platform, but message-to-mission fit is close to ideal at a low cost to test.</div>
+    </div>
+
+    <div class="creator-card">
+      <div class="creator-head">
+        <h3 class="creator-name">Sofia Crnilovic (@sofiacrnilovic)</h3>
+        <span class="tier tier-okay">Okay fit</span>
+      </div>
+      <p class="creator-meta">~381K Instagram · 1.5M TikTok · Virginia Beach, VA</p>
+      <p class="body-text">Lifestyle, outfit, and makeup content — GRWMs, transitions, outfit reels. Audience skews heavily male, 18–24, across platforms. No visible training or recovery narrative today.</p>
+      <p class="body-text">The reach is a genuine gateway to a demographic that isn't already fitness-obsessed, but only if WHOOP is deliberately targeting lifestyle-first audiences with a "feel better throughout your day" framing over a performance framing. Without an existing content thread to hook into, an integration risks reading as a paid placement.</p>
+      <div class="verdict-line"><span class="label">Verdict —</span> situational. Strong reach, but a content-substance mismatch unless the strategy is audience expansion.</div>
+    </div>
+
+    <div class="creator-card">
+      <div class="creator-head">
+        <h3 class="creator-name">Togi (Shane Stoffer)</h3>
+        <span class="tier tier-okay">Okay fit</span>
+      </div>
+      <p class="creator-meta">Millions across TikTok, YouTube, Instagram · Bozeman, MT</p>
+      <p class="body-text">High-energy bodybuilding influencer known for extreme lifestyle content and a publicly documented history of drug use, including a 2024 overdose. Recently, openly discussing sobriety and faith, alongside a candidly discussed 2026 financial collapse.</p>
+      <p class="body-text">The sobriety arc is a genuinely compelling recovery narrative, but it's tangled with ongoing volatility that sits uncomfortably next to a science-and-discipline brand. Authenticity is high but double-edged — the brand can't control what "authentic" looks like from him week to week.</p>
+      <div class="verdict-line"><span class="label">Verdict —</span> watch, don't sign yet. Worth revisiting if the current trajectory holds.</div>
+    </div>
+
+    <div class="creator-card">
+      <div class="creator-head">
+        <h3 class="creator-name">Tren Twins (Michael &amp; Christian Gaiera)</h3>
+        <span class="tier tier-pass">Not a good fit</span>
+      </div>
+      <p class="creator-meta">~2M Instagram · 1.7M TikTok · 1M+ YouTube combined</p>
+      <p class="body-text">Bodybuilding twins whose name directly references an anabolic steroid, and who've openly discussed steroid and testosterone use as part of their public persona. Multiple outlets flag concern about their influence on underage audiences experimenting with steroids.</p>
+      <p class="body-text">WHOOP's brand is built on recovery science and self-knowledge through data — the opposite of a brand built on blurring the lines around performance-enhancing drug use. Reach doesn't offset a mission conflict this direct.</p>
+      <div class="verdict-line"><span class="label">Verdict —</span> pass. This partnership would work against WHOOP's credibility on recovery and health.</div>
+    </div>
+
+    <table class="summary">
+      <tr><th>Creator</th><th>Reach</th><th>Tier</th></tr>
+      <tr><td>Ian Fonz</td><td>~588K</td><td>Signed &amp; working</td></tr>
+      <tr><td>Emilio Fernandez</td><td>~5K</td><td>Great fit</td></tr>
+      <tr><td>Sofia Crnilovic</td><td>~381K–1.5M</td><td>Okay fit</td></tr>
+      <tr><td>Togi</td><td>Millions</td><td>Okay fit</td></tr>
+      <tr><td>Tren Twins</td><td>~2M+ combined</td><td>Not a good fit</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>Built as part of an application to WHOOP's Creators &amp; Ambassadors team.</p>
+  </footer>
+</div>
+
+</body>
+</html>
